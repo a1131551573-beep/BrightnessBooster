@@ -14,10 +14,13 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://maven.pkg.github.com/rikka-core/Shizuku-API' }
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/rikka-core/Shizuku-API"
+        }
     }
 }
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
 }
